@@ -1,0 +1,367 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    position: relative;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    transform: translateX(18vw);
+
+}
+
+#demo {
+    padding: 15px;
+    width: 50vw;
+    height: 100vh;
+    font-size: 14px;
+    overflow-y: scroll;
+    background-color: yellow;
+    display: inline-block;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#demo::-webkit-scrollbar {
+    display: none;
+}
+
+@media (max-width: 400px) {
+    .container {
+        transform: translateX(-60px) translateY(-40px);
+    }
+
+    #demo {
+        height: 50vh;
+        width: 100%;
+        position: fixed;
+        top: 450px;
+        left: 0;
+    }
+}
+
+
+.head {
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.face {
+    width: 160px;
+    height: 158px;
+    border-bottom: none;
+    position: absolute;
+}
+
+.ear {
+    width: 140px;
+    height: 35px;
+}
+
+.leftEar {
+    position: absolute;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.leftEar::before {
+    width: 50px;
+    height: 35px;
+    content: "";
+    position: absolute;
+    z-index: 1;
+}
+
+.rightEar {
+    position: absolute;
+    height: 38px;
+    width: 120px;
+
+    overflow: hidden;
+    z-index: 2;
+}
+
+.rightEar::before {
+    width: 100px;
+    height: 80px;
+    content: "";
+    position: absolute;
+    transform: rotate(0deg);
+    z-index: 1;
+}
+
+.rightBrow {
+    width: 25px;
+    position: absolute;
+}
+
+.leftBrow {
+    width: 25px;
+    position: absolute;
+}
+
+.leftEye {
+    width: 20px;
+    height: 30px;
+    position: absolute;
+}
+
+.leftEye::before {
+    content: "";
+    display: block;
+    width: 8px;
+    height: 14px;
+    position: absolute;
+}
+
+.rightEye {
+    width: 27px;
+    height: 30px;
+    position: absolute;
+}
+
+.rightEye::before {
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+}
+
+.nose {
+    width: 12px;
+    height: 12px;
+    position: absolute;
+
+}
+
+.mouth {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 10px;
+}
+
+.mouth::before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+}
+
+.mouth::after {
+    content: "";
+    display: block;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+}
+
+.leftFace {
+    width: 30px;
+    height: 70px;
+    position: absolute;
+}
+
+.leftFace::before {
+    content: "";
+    display: block;
+    width: 28px;
+    height: 45px;
+    position: absolute;
+}
+
+.rightFace {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+}
+
+.main {
+    width: 500px;
+    height: 300px;
+    left: 50%;
+    top: 151px;
+    transform: translateX(-50%);
+    position: absolute;
+}
+
+.belly {
+    width: 190px;
+    height: 150px;
+    position: absolute;
+}
+
+.belly::before {
+    content: "";
+    display: block;
+    width: 36px;
+    height: 100px;
+    position: absolute;
+}
+
+.leftHand {
+    width: 65px;
+    height: 65px;
+    position: absolute;
+}
+
+.leftHand::before {
+    content: "";
+    height: 10px;
+    width: 40px;
+    position: absolute;
+}
+
+.rightHand {
+    width: 80px;
+    height: 65px;
+    position: absolute;
+}
+
+.tagTop {
+    width: 22px;
+    height: 14px;
+    position: absolute;
+}
+
+.tagBottom {
+    width: 34px;
+    height: 18px;
+    position: absolute;
+}
+
+.footer {
+    width: 300px;
+    position: relative;
+    top: 300px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.leftFoot {
+    width: 80px;
+    height: 35px;
+    position: absolute;
+}
+
+.leftFoot::before {
+    content: "";
+    display: block;
+    position: absolute;
+}
+
+.leftFoot::after {
+    content: "";
+    display: block;
+    position: absolute;
+}
+
+.rightFoot {
+    width: 80px;
+    height: 35px;
+    position: absolute;
+}
+
+.rightFoot::before {
+    content: "";
+    display: block;
+    position: absolute;
+}
+
+.rightFoot::after {
+    content: "";
+    display: block;
+    position: absolute;
+}
+
+.tail {
+    width: 200px;
+    height: 150px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(88px) translateY(-40px) rotate(-25deg);
+    top: 150px;
+    z-index: -1;
+
+    transform-origin: bottom left;
+    animation: x infinite alternate 1s linear;
+}
+
+@keyframes x {
+    0% {
+        transform: translateX(88px) translateY(-40px) rotate(-40deg);
+    }
+    66% {
+        transform: translateX(88px) translateY(-40px) rotate(-30deg);
+    }
+    100% {
+        transform: translateX(88px) translateY(-40px) rotate(-20deg);
+    }
+}
+
+.tail1 {
+    width: 50px;
+    height: 15px;
+    position: absolute;
+}
+
+.tail2 {
+    width: 30px;
+    height: 20px;
+    position: absolute;
+}
+
+.tail3 {
+    width: 80px;
+    height: 20px;
+    position: absolute;
+}
+
+.tail4 {
+    width: 80px;
+    height: 30px;
+    position: absolute;
+}
+
+.tail5 {
+    width: 130px;
+    height: 70px;
+    position: absolute;
+}
+
+.bottom {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-right: 8px;
+    margin-top: 8px;
+}
+
+.bottom > button {
+    background-color: yellow;
+    padding: 5px 10px;
+
+}
